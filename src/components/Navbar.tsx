@@ -1,12 +1,12 @@
-import React from "react";
+import Link from "next/link";
 
-const Navbar: React.FC = () => {
+export default function Navbar() {
   return (
-    <div className="navbar bg-base-100 border-b">
+    <nav className="navbar bg-gradient-to-r from-cyan-500 to-teal-400 shadow-lg px-4 py-2 text-white font-semibold">
       <div className="flex-1">
-        <a className="btn btn-ghost text-xl" href="/">
-          YourBrand
-        </a>
+        <Link href="/" className="btn btn-ghost normal-case text-2xl font-extrabold tracking-wide" style={{ fontFamily: "'Montserrat', Quicksand, sans-serif" }}>
+          Matan Sweeto
+        </Link>
       </div>
       <div className="flex-none">
         {/* Hamburger menu for mobile */}
@@ -14,7 +14,7 @@ const Navbar: React.FC = () => {
           <label tabIndex={0} className="btn btn-ghost">
             <svg
               xmlns="http://www.w3.org/2000/svg"
-              className="h-5 w-5"
+              className="h-6 w-6"
               fill="none"
               viewBox="0 0 24 24"
               stroke="currentColor"
@@ -29,40 +29,38 @@ const Navbar: React.FC = () => {
           </label>
           <ul
             tabIndex={0}
-            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-base-100 rounded-box w-52 z-50"
+            className="menu menu-compact dropdown-content mt-3 p-2 shadow bg-white/90 text-cyan-900 rounded-box w-52 z-50"
           >
             <li>
-              <a href="/">Home</a>
+              <Link href="/" className="hover:text-teal-600 font-medium">Home</Link>
             </li>
             <li>
-              <a href="/about">About</a>
+              <Link href="/about" className="hover:text-teal-600 font-medium">About</Link>
             </li>
             <li>
-              <a href="/sponsorship">Sponsorship</a>
+              <Link href="/sponsorship" className="hover:text-teal-600 font-medium">Sponsorship</Link>
             </li>
             <li>
-              <a href="/contact">Contact</a>
+              <Link href="/contact" className="hover:text-teal-600 font-medium">Contact</Link>
             </li>
           </ul>
         </div>
         {/* Horizontal menu for desktop */}
         <ul className="menu menu-horizontal px-1 hidden lg:flex">
           <li>
-            <a href="/">Home</a>
+            <Link href="/" className="hover:text-yellow-200 transition">Home</Link>
           </li>
           <li>
-            <a href="/about">About</a>
+            <Link href="/about" className="hover:text-yellow-200 transition">About</Link>
           </li>
           <li>
-            <a href="/sponsorship">Sponsorship</a>
+            <Link href="/sponsorship" className="hover:text-yellow-200 transition">Sponsorship</Link>
           </li>
           <li>
-            <a href="/contact">Contact</a>
+            <Link href="/contact" className="hover:text-yellow-200 transition">Contact</Link>
           </li>
         </ul>
       </div>
-    </div>
+    </nav>
   );
-};
-
-export default Navbar;
+}
