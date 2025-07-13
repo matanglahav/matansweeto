@@ -2,16 +2,26 @@ import Image from "next/image";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gradient-to-br from-cyan-200 via-teal-100 to-white flex flex-col items-center px-4 py-10 font-sans">
-      {/* Profile/hero image */}
-      <div className="w-36 h-36 md:w-48 md:h-48 rounded-full overflow-hidden border-4 border-cyan-400 shadow-lg mb-6 mt-4">
+    <main className="flex flex-col items-center bg-gradient-to-br from-cyan-200 via-teal-100 to-white">
+      {/* Hero Guitar Image */}
+      <div
+        className="
+          w-full relative flex justify-center items-center overflow-hidden
+          min-h-[60vw]   /* mobile: 60vw tall (roughly square) */
+          sm:min-h-[50vh] /* small screens: 50% viewport height */
+          md:min-h-[60vh] /* medium screens: 60% viewport height */
+          lg:min-h-[70vh] /* large screens: 70% viewport height */
+          xl:min-h-[80vh] /* extra large screens: 80% viewport height */
+          2xl:min-h-[90vh] /* huge screens: 90% viewport height */
+        "
+      >
         <Image
-          src="/images/profile.jpg"
-          alt="Matan Sweeto"
-          width={192}
-          height={192}
-          className="object-cover w-full h-full"
+          src="/images/guitar.JPG"
+          alt="Guitar"
+          fill
           priority
+          className="object-cover object-center"
+          sizes="100vw"
         />
       </div>
       {/* Hero section */}

@@ -38,7 +38,7 @@ export default function Sponsorship() {
           </ul>
           <h3 className="text-2xl font-semibold text-teal-600 mb-2">🌎 Why Now?</h3>
           <p className="mb-4 text-lg">
-            I'm preparing for a powerful pilgrimage to Peru and Brazil — a return to the roots of ancient medicine ways. This moment is a portal. I trust that the right supporter will arrive, aligned in heart and purpose.
+            I&apos;m preparing for a powerful pilgrimage to Peru and Brazil — a return to the roots of ancient medicine ways. This moment is a portal. I trust that the right supporter will arrive, aligned in heart and purpose.
           </p>
           <p className="mb-2 text-lg">
             For a detailed overview of my journey, expenses, and how I honor my sponsors, please{" "}
