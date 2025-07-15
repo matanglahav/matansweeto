@@ -1,60 +1,94 @@
 "use client";
 
-
-import { FaInstagram, FaSpotify } from "react-icons/fa";
+import Link from "next/link";
+import { useState } from "react";
 
 export default function Footer() {
+  const [email, setEmail] = useState("");
+  const [isSubscribed, setIsSubscribed] = useState(false);
+
+  const handleSubscribe = (e: React.FormEvent) => {
+    e.preventDefault();
+    if (email) {
+      // Handle subscription logic here
+      console.log("Subscribing email:", email);
+      setIsSubscribed(true);
+      setEmail("");
+      setTimeout(() => setIsSubscribed(false), 3000);
+    }
+  };
+
   return (
-    <footer className="w-full bg-gradient-to-r from-cyan-500 to-teal-400 text-white py-8 mt-8 shadow-inner">
-      <div className="max-w-3xl mx-auto flex flex-col items-center gap-6">
-        {/* Social Icons */}
-        <div className="flex gap-6 text-2xl">
-          <a
-            href="https://www.instagram.com/YOUR_USERNAME"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Instagram"
-            className="hover:text-pink-200 transition"
-          >
-            <FaInstagram />
-          </a>
-          <a
-            href="https://open.spotify.com/artist/YOUR_SPOTIFY_ID"
-            target="_blank"
-            rel="noopener noreferrer"
-            aria-label="Spotify"
-            className="hover:text-green-200 transition"
-          >
-            <FaSpotify />
-          </a>
+    <footer className="w-full bg-gradient-to-r from-cyan-600 to-teal-500 text-white py-16 px-6">
+      <div className="max-w-4xl mx-auto text-center">
+        {/* Main Content */}
+        <div className="mb-12">
+          <h3 className="text-3xl font-bold mb-6" style={{ fontFamily: "'Montserrat', Quicksand, sans-serif" }}>
+            Stay Connected
+          </h3>
+          <p className="text-xl text-cyan-100 mb-8 max-w-2xl mx-auto leading-relaxed">
+            Join the journey of music, ceremony, and healing. Subscribe to receive updates about upcoming events, new music, and spiritual gatherings.
+          </p>
+          
+          {/* Email Subscription */}
+          <form onSubmit={handleSubscribe} className="max-w-md mx-auto mb-8">
+            <div className="flex flex-col sm:flex-row gap-3">
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="Enter your email"
+                className="flex-1 px-4 py-3 rounded-full text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-300"
+                required
+              />
+              <button
+                type="submit"
+                className="bg-yellow-400 hover:bg-yellow-300 text-cyan-900 font-semibold px-6 py-3 rounded-full transition-colors duration-200 transform hover:scale-105"
+              >
+                Subscribe
+              </button>
+            </div>
+            {isSubscribed && (
+              <p className="text-yellow-200 mt-3 font-medium">
+                Thank you for subscribing! 🙏
+              </p>
+            )}
+          </form>
         </div>
-
-        {/* Email Subscribe */}
-        <form
-          onSubmit={e => {
-            e.preventDefault();
-            alert("Thank you for subscribing!");
-          }}
-          className="flex flex-col sm:flex-row gap-3 items-center"
-        >
-          <input
-            type="email"
-            name="email"
-            placeholder="Your email address"
-            required
-            className="input input-bordered rounded-full px-4 py-2 w-64 text-gray-900 focus:outline-none"
-          />
-          <button
-            type="submit"
-            className="btn btn-primary rounded-full bg-cyan-700 border-none hover:bg-teal-600 px-6 text-white font-semibold shadow"
-          >
-            Subscribe
-          </button>
-        </form>
-
-        {/* Footer Bottom */}
-        <div className="text-center text-sm opacity-80 mt-2">
-          <p>© 2025 Matan Sweeto</p>
+        
+        {/* Navigation Links */}
+        <div className="border-t border-cyan-400/30 pt-8">
+          <nav className="flex flex-wrap justify-center gap-8 mb-6">
+            <Link 
+              href="/" 
+              className="text-lg text-cyan-100 hover:text-yellow-200 transition-colors duration-200 font-medium"
+            >
+              Home
+            </Link>
+            <Link 
+              href="/about" 
+              className="text-lg text-cyan-100 hover:text-yellow-200 transition-colors duration-200 font-medium"
+            >
+              About
+            </Link>
+            <Link 
+              href="/sponsorship" 
+              className="text-lg text-cyan-100 hover:text-yellow-200 transition-colors duration-200 font-medium"
+            >
+              Sponsorship
+            </Link>
+            <Link 
+              href="/contact" 
+              className="text-lg text-cyan-100 hover:text-yellow-200 transition-colors duration-200 font-medium"
+            >
+              Contact
+            </Link>
+          </nav>
+          
+          {/* Copyright */}
+          <p className="text-cyan-200 text-sm">
+            © 2025 Matan Sweeto. All rights reserved. Made with ❤️ for healing and connection.
+          </p>
         </div>
       </div>
     </footer>

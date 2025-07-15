@@ -4,17 +4,7 @@ export default function Home() {
   return (
     <main className="flex flex-col items-center bg-gradient-to-br from-cyan-200 via-teal-100 to-white">
       {/* Hero Guitar Image */}
-      <div
-        className="
-          w-full relative flex justify-center items-center overflow-hidden
-          min-h-[60vw]   /* mobile: 60vw tall (roughly square) */
-          sm:min-h-[50vh] /* small screens: 50% viewport height */
-          md:min-h-[60vh] /* medium screens: 60% viewport height */
-          lg:min-h-[70vh] /* large screens: 70% viewport height */
-          xl:min-h-[80vh] /* extra large screens: 80% viewport height */
-          2xl:min-h-[90vh] /* huge screens: 90% viewport height */
-        "
-      >
+      <div className="w-full relative overflow-hidden h-[400px] sm:h-[450px] md:h-[500px] lg:h-[550px] xl:h-[600px]">
         <Image
           src="/images/guitar.JPG"
           alt="Guitar"
@@ -40,7 +30,7 @@ export default function Home() {
         <h2 className="text-2xl font-bold text-cyan-700 mb-2">My Story</h2>
         <p className="text-lg text-gray-700">
           My path is one of heart, song, and service. From the forests of South America to the sacred spaces of the world,
-          I’ve devoted my life to sharing music that heals and to guiding ceremonies that connect us to spirit, to the earth, and to each other.<br /><br />
+          I've devoted my life to sharing music that heals and to guiding ceremonies that connect us to spirit, to the earth, and to each other.<br /><br />
           Every note is a prayer, every gathering a chance for transformation. Thank you for being here.
         </p>
       </section>
