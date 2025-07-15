@@ -14,6 +14,7 @@ export default function Home() {
           sizes="100vw"
         />
       </div>
+      
       {/* Hero section */}
       <section className="w-full max-w-2xl bg-white/80 rounded-2xl shadow-lg p-6 md:p-10 text-center mb-8">
         <h1 className="text-4xl md:text-5xl font-extrabold text-cyan-700 mb-4" style={{ fontFamily: "'Montserrat', Quicksand, sans-serif" }}>
@@ -30,7 +31,7 @@ export default function Home() {
         <h2 className="text-2xl font-bold text-cyan-700 mb-2">My Story</h2>
         <p className="text-lg text-gray-700">
           My path is one of heart, song, and service. From the forests of South America to the sacred spaces of the world,
-          I've devoted my life to sharing music that heals and to guiding ceremonies that connect us to spirit, to the earth, and to each other.<br /><br />
+          I&apos;ve devoted my life to sharing music that heals and to guiding ceremonies that connect us to spirit, to the earth, and to each other.<br /><br />
           Every note is a prayer, every gathering a chance for transformation. Thank you for being here.
         </p>
       </section>

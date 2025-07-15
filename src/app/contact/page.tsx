@@ -47,7 +47,7 @@ export default function Contact() {
             
             {isSubmitted && (
               <div className="bg-green-100 border border-green-400 text-green-700 px-4 py-3 rounded-lg mb-6">
-                Thank you for your message! I'll get back to you soon. 🙏
+                Thank you for your message! I&apos;ll get back to you soon. 🙏
               </div>
             )}
 
@@ -130,7 +130,7 @@ export default function Contact() {
           {/* Contact Info */}
           <section className="space-y-8">
             <div className="bg-gradient-to-r from-cyan-200 to-teal-100 rounded-2xl shadow-lg p-8">
-              <h2 className="text-3xl font-bold text-teal-700 mb-6">Let's Connect</h2>
+              <h2 className="text-3xl font-bold text-teal-700 mb-6">Let&apos;s Connect</h2>
               <div className="space-y-6 text-gray-700">
                 <div>
                   <h3 className="font-semibold text-cyan-700 mb-2">Ceremony Bookings</h3>
