@@ -6,15 +6,38 @@ import { useState } from "react";
 export default function Footer() {
   const [email, setEmail] = useState("");
   const [isSubscribed, setIsSubscribed] = useState(false);
+  const [error, setError] = useState<string | null>(null);
+  const [loading, setLoading] = useState(false);
 
-  const handleSubscribe = (e: React.FormEvent) => {
+  const handleSubscribe = async (e: React.FormEvent) => {
     e.preventDefault();
-    if (email) {
-      // Handle subscription logic here
-      console.log("Subscribing email:", email);
-      setIsSubscribed(true);
-      setEmail("");
-      setTimeout(() => setIsSubscribed(false), 3000);
+    setError(null);
+    if (!email) return;
+
+    setLoading(true);
+
+    try {
+      // Google Apps Script endpoint
+      const scriptURL =
+        "https://script.google.com/macros/s/AKfycbwZwYUgeV62DYsSM2-TgZvoSx30jWbJVqAaByE9J7tOBWmqfx1kAzusI513mAak5L8eSg/exec";
+
+      const params = new URLSearchParams({ email });
+
+      const res = await fetch(`${scriptURL}?${params.toString()}`, {
+        method: "POST",
+      });
+
+      if (res.ok) {
+        setIsSubscribed(true);
+        setEmail("");
+        setTimeout(() => setIsSubscribed(false), 3000);
+      } else {
+        setError("There was an error subscribing. Please try again.");
+      }
+    } catch {
+      setError("There was an error subscribing. Please try again.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -23,13 +46,18 @@ export default function Footer() {
       <div className="max-w-4xl mx-auto text-center">
         {/* Main Content */}
         <div className="mb-12">
-          <h3 className="text-3xl font-bold mb-6" style={{ fontFamily: "'Montserrat', Quicksand, sans-serif" }}>
+          <h3
+            className="text-3xl font-bold mb-6"
+            style={{ fontFamily: "'Montserrat', Quicksand, sans-serif" }}
+          >
             Stay Connected
           </h3>
+
           <p className="text-xl text-cyan-100 mb-8 max-w-2xl mx-auto leading-relaxed">
-            Join the journey of music, ceremony, and healing. Subscribe to receive updates about upcoming events, new music, and spiritual gatherings.
+            Subscribe for updates on new music, upcoming events, retreats, and
+            immersive journeys into the Amazon jungle.
           </p>
-          
+
           {/* Email Subscription */}
           <form onSubmit={handleSubscribe} className="max-w-md mx-auto mb-8">
             <div className="flex flex-col sm:flex-row gap-3">
@@ -40,54 +68,65 @@ export default function Footer() {
                 placeholder="Enter your email"
                 className="flex-1 px-4 py-3 rounded-full text-gray-900 placeholder-gray-500 focus:outline-none focus:ring-2 focus:ring-yellow-300"
                 required
+                disabled={loading}
               />
               <button
                 type="submit"
                 className="bg-yellow-400 hover:bg-yellow-300 text-cyan-900 font-semibold px-6 py-3 rounded-full transition-colors duration-200 transform hover:scale-105"
+                disabled={loading}
               >
-                Subscribe
+                {loading ? "Subscribing..." : "Subscribe"}
               </button>
             </div>
+
             {isSubscribed && (
               <p className="text-yellow-200 mt-3 font-medium">
-                Thank you for subscribing! 🙏
+                You’re subscribed. Thank you.
               </p>
             )}
+
+            {error && <p className="text-red-200 mt-3 font-medium">{error}</p>}
           </form>
         </div>
-        
+
         {/* Navigation Links */}
         <div className="border-t border-cyan-400/30 pt-8">
           <nav className="flex flex-wrap justify-center gap-8 mb-6">
-            <Link 
-              href="/" 
+            <Link
+              href="/"
               className="text-lg text-cyan-100 hover:text-yellow-200 transition-colors duration-200 font-medium"
             >
               Home
             </Link>
-            <Link 
-              href="/about" 
+            <Link
+              href="/about"
               className="text-lg text-cyan-100 hover:text-yellow-200 transition-colors duration-200 font-medium"
             >
               About
             </Link>
-            <Link 
-              href="/sponsorship" 
+            <Link
+              href="/music"
               className="text-lg text-cyan-100 hover:text-yellow-200 transition-colors duration-200 font-medium"
             >
-              Sponsorship
+              Music
             </Link>
-            <Link 
-              href="/contact" 
+            <Link
+              href="/retreats"
               className="text-lg text-cyan-100 hover:text-yellow-200 transition-colors duration-200 font-medium"
             >
-              Contact
+              Retreats
+            </Link>
+            <Link
+              href="/join-the-jungle"
+              className="text-lg text-cyan-100 hover:text-yellow-200 transition-colors duration-200 font-medium"
+            >
+              Join the Jungle
             </Link>
           </nav>
-          
+
           {/* Copyright */}
           <p className="text-cyan-200 text-sm">
-            © 2025 Matan Sweeto. All rights reserved. Made with ❤️ for healing and connection.
+            © {new Date().getFullYear()} Matan Sweeto. Made with ❤️
           </p>
         </div>
       </div>
