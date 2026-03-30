@@ -64,7 +64,7 @@ export default function RetreatsPage() {
 
           <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
             I&apos;m super stoked to visit, work and study with the Nike Koi
-            tribe Aldeia Meke Waninawa.
+            tribe at Aldeia Meke Waninawa.
           </p>
 
           <p className="text-lg md:text-xl text-gray-700 leading-relaxed mt-5">
