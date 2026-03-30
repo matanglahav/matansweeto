@@ -50,16 +50,19 @@ function IconMail(props: React.SVGProps<SVGSVGElement>) {
 export default function Home() {
   return (
     <main className="bg-gradient-to-br from-cyan-200 via-teal-100 to-white">
-      {/* Hero Guitar Image - Full Screen */}
-      <section className="relative h-screen w-full overflow-hidden">
-        <Image
-          src="/images/guitar.JPG"
-          alt="Guitar"
-          fill
-          priority
-          className="object-cover object-center"
-          sizes="100vw"
-        />
+
+      {/* Banner */}
+      <section className="w-full bg-white flex items-center justify-center py-4 px-4 shadow-sm">
+        <div className="relative w-full max-w-4xl h-24 sm:h-32 md:h-40 lg:h-48">
+          <Image
+            src="/images/banner website light matan.png"
+            alt="Matan Sweeto"
+            fill
+            priority
+            className="object-contain object-center"
+            sizes="(max-width: 768px) 100vw, 896px"
+          />
+        </div>
       </section>
 
       {/* Introduction Section */}
@@ -77,7 +80,6 @@ export default function Home() {
 
       {/* Rainbow Background Section */}
       <section className="relative px-0 lg:px-32">
-        {/* Rainbow Image Container */}
         <div className="relative w-full h-[60vh] lg:h-[70vh] overflow-hidden lg:rounded-3xl lg:shadow-2xl">
           <Image
             src="/images/rainbow.JPG"
@@ -89,7 +91,6 @@ export default function Home() {
           />
         </div>
 
-        {/* Content Section - Below Image */}
         <div className="w-full px-6 md:px-12 lg:px-16 py-20 bg-gradient-to-br from-cyan-50 via-teal-50 to-white">
           <div className="max-w-4xl mx-auto">
             <div className="bg-white/95 backdrop-blur-sm rounded-2xl shadow-2xl p-8 md:p-12">
