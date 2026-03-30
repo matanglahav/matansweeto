@@ -14,7 +14,6 @@ function IconWhatsApp(props: React.SVGProps<SVGSVGElement>) {
         d="M26.64 5.36A14.95 14.95 0 0 0 16 1C7.73 1 1 7.73 1 16c0 2.64.7 5.2 2.02 7.45L1 31l7.74-1.97A14.93 14.93 0 0 0 16 31c8.27 0 15-6.73 15-15 0-4.01-1.56-7.79-4.36-10.64ZM16 28.5c-2.29 0-4.54-.62-6.51-1.8l-.47-.28-4.6 1.17 1.23-4.49-.3-.46A12.43 12.43 0 0 1 3.5 16C3.5 9.11 9.11 3.5 16 3.5c3.34 0 6.48 1.3 8.84 3.66A12.41 12.41 0 0 1 28.5 16c0 6.89-5.61 12.5-12.5 12.5Z"
       />
     </svg>
-  );
 }
 
 function IconInstagram(props: React.SVGProps<SVGSVGElement>) {
@@ -33,7 +32,6 @@ function IconInstagram(props: React.SVGProps<SVGSVGElement>) {
         d="M17.4 6.6a1 1 0 1 0 0 2 1 1 0 0 0 0-2Z"
       />
     </svg>
-  );
 }
 
 function IconMail(props: React.SVGProps<SVGSVGElement>) {
@@ -44,7 +42,6 @@ function IconMail(props: React.SVGProps<SVGSVGElement>) {
         d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z"
       />
     </svg>
-  );
 }
 
 export default function Home() {
@@ -64,8 +61,18 @@ export default function Home() {
         />
       </section>
 
+      {/* Headliner - below banner, not on image */}
+      <section className="w-full text-center py-10 px-6">
+        <h1
+          className="text-4xl md:text-5xl lg:text-6xl font-extrabold text-cyan-700"
+          style={{ fontFamily: "'Montserrat', Quicksand, sans-serif" }}
+        >
+          Welcome to my online world
+        </h1>
+      </section>
+
       {/* Introduction Section */}
-      <section className="py-20 px-6 md:px-12 lg:px-16">
+      <section className="py-10 px-6 md:px-12 lg:px-16">
         <div className="max-w-4xl mx-auto text-center">
           <div className="bg-white/90 rounded-2xl shadow-xl p-8 md:p-12 lg:p-16">
             <p className="text-xl md:text-2xl lg:text-3xl text-gray-800 leading-relaxed">
