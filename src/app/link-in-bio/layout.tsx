@@ -1,7 +1,7 @@
-export default function Layout({ children }) {
-  return (
-    <div className="link-in-bio-layout">
-      {children}
-    </div>
-  );
+export default function Layout({
+  children,
+}: {
+  children: React.ReactNode;
+}) {
+  return <>{children}</>;
 }

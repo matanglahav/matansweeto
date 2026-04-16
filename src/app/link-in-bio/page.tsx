@@ -1,31 +1,81 @@
-import React from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from './page.module.css';
 
-const LinkInBio = () => {
-    return (
-        <div className={styles.container}>
-            <div className={styles.card}>
-                <Image 
-                    src="/path-to-your-profile-photo.jpg" 
-                    alt="Profile Photo" 
-                    width={100} 
-                    height={100} 
-                    className={styles.profilePhoto} 
-                />
-                <h1>Your Name</h1>
-                <div className={styles.artworkPlaceholder}></div>
-                <div className={styles.buttonContainer}>
-                    <Link href="https://spotify.com" className={styles.button}>Spotify</Link>
-                    <Link href="https://bandcamp.com" className={styles.button}>Bandcamp</Link>
-                    <Link href="https://youtube.com" className={styles.button}>YouTube</Link>
-                    <Link href="https://yourwebsite.com" className={styles.button}>Main Website</Link>
-                    <Link href="https://jungleimmersionretreat.com" className={styles.button}>Jungle Immersion Retreat</Link>
-                </div>
-            </div>
-        </div>
-    );
-};
+const links = [
+  {
+    label: 'Spotify',
+    href: 'https://open.spotify.com/',
+    variant: 'primary',
+  },
+  {
+    label: 'Bandcamp',
+    href: 'https://bandcamp.com/',
+    variant: 'secondary',
+  },
+  {
+    label: 'YouTube',
+    href: 'https://youtube.com/',
+    variant: 'secondary',
+  },
+  {
+    label: 'Main Website',
+    href: 'https://matansweeto.com',
+    variant: 'secondary',
+  },
+  {
+    label: 'Jungle Immersion Retreat',
+    href: 'https://jungleimmersionretreat.com',
+    variant: 'secondary',
+  },
+];
 
-export default LinkInBio;
+export default function LinkInBio() {
+  return (
+    <main className={styles.container}>
+      <section className={styles.card}>
+        <div className={styles.profileWrap}>
+          <Image
+            src="/path-to-your-profile-photo.jpg"
+            alt="Profile Photo"
+            width={120}
+            height={120}
+            className={styles.profilePhoto}
+            priority
+          />
+        </div>
+
+        <h1 className={styles.title}>Matan Sweeto</h1>
+        <p className={styles.subtitle}>
+          Music, retreats, and everything I’m sharing right now — all in one place.
+        </p>
+
+        <div className={styles.heroBlock}>
+          <div className={styles.heroContent}>
+            <span className={styles.heroEyebrow}>Featured on Spotify</span>
+            <div className={styles.heroTitle}>New music / latest release</div>
+            <div className={styles.heroText}>
+              Swap this block for your cover art or a promo image.
+            </div>
+          </div>
+        </div>
+
+        <nav className={styles.buttonContainer} aria-label="Social and external links">
+          {links.map((link) => (
+            <Link
+              key={link.label}
+              href={link.href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${styles.button} ${
+                link.variant === 'primary' ? styles.buttonPrimary : styles.buttonSecondary
+              }`}
+            >
+              {link.label}
+            </Link>
+          ))}
+        </nav>
+      </section>
+    </main>
+  );
+}
