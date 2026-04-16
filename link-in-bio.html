@@ -6,60 +6,56 @@
     <title>Link in Bio</title>
     <style>
         body {
-            background-color: #e0f7fa; /* Light blue background */
+            background-color: #e0f7fa; /* Soft light-blue background */
             font-family: Arial, sans-serif;
+            text-align: center;
             margin: 0;
             padding: 0;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
         }
         .card {
             background: white;
             border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+            margin: 50px auto;
             padding: 20px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.2);
-            text-align: center;
-            width: 300px;
+            max-width: 400px;
         }
         .profile-photo {
-            width: 100px;
-            height: 100px;
+            width: 80px;
+            height: 80px;
             border-radius: 50%;
-            margin-bottom: 15px;
+            margin: 0 auto;
+            display: block;
         }
-        .photo-area {
-            width: 100%;
-            height: 200px;
-            background: url('https://link-to-your-spoify-preview-image') no-repeat center center;
-            background-size: cover;
-            margin-bottom: 15px;
-            border-radius: 10px;
-        }
-        a {
+        .button {
             display: inline-block;
             margin: 10px 0;
-            padding: 10px 15px;
-            background-color: #42a5f5;
+            padding: 10px 20px;
             color: white;
+            background-color: #00796b;
+            border: none;
             border-radius: 5px;
             text-decoration: none;
+            font-size: 16px;
+            transition: background-color 0.3s;
         }
-        a:hover {
-            background-color: #2196f3;
+        .button:hover {
+            background-color: #004d40;
         }
     </style>
 </head>
 <body>
     <div class="card">
-        <img src="path/to/your/profile/photo.jpg" alt="Profile Photo" class="profile-photo">
-        <div class="photo-area"></div>
-        <a href="https://open.spotify.com/track/1hF1UTrEhEtsH3XCiAFsSn?si=b207306f717d4ba1">Listen on Spotify</a>
-        <a href="https://yourbandcamp.link">Bandcamp</a>
-        <a href="https://youtube.com/yourchannel">YouTube</a>
-        <a href="https://yourwebsite.com">Main Website</a>
-        <a href="https://jungleimmersionretreat.com">Jungle Immersion Retreat</a>
+        <img src="https://via.placeholder.com/80" alt="Profile Photo" class="profile-photo">
+        <h1>Your Name</h1>
+        <p>Welcome to my link page. You can find my latest works here!</p>
+        <div>
+            <a href="https://open.spotify.com" class="button">Spotify</a>
+            <a href="https://bandcamp.com" class="button">Bandcamp</a>
+            <a href="https://youtube.com" class="button">YouTube</a>
+            <a href="https://mainwebsite.com" class="button">Main Website</a>
+            <a href="https://jungleimmersionretreat.com" class="button">Jungle Immersion Retreat</a>
+        </div>
     </div>
 </body>
 </html>
