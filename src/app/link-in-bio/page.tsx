@@ -31,8 +31,8 @@ export default function LinkInBio() {
       <section className={styles.card}>
         <div className={styles.profileWrap}>
           <Image
-            src="/path-to-your-profile-photo.jpg"
-            alt="Profile Photo"
+            src="/images/guitar.JPG"
+            alt="Matan Sweeto playing guitar"
             width={120}
             height={120}
             className={styles.profilePhoto}
