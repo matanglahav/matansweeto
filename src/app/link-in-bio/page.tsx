@@ -5,7 +5,7 @@ import styles from './page.module.css';
 const links = [
   {
     label: 'Spotify',
-    href: 'https://open.spotify.com/artist/1gbdkHLoka2Y0PaH2d5KPO?si=PQwM850HTMC8Chss-mKttQ',
+    href: 'https://open.spotify.com/track/1hF1UTrEhEtsH3XCiAFsSn?si=6c63d0c9471f477e',
     variant: 'primary',
   },
   {
@@ -45,15 +45,28 @@ export default function LinkInBio() {
           Music, retreats, and everything I’m sharing right now — all in one place.
         </p>
 
-        <div className={styles.heroBlock}>
+        <Link
+          href="https://open.spotify.com/track/1hF1UTrEhEtsH3XCiAFsSn?si=6c63d0c9471f477e"
+          target="_blank"
+          rel="noopener noreferrer"
+          className={styles.heroBlock}
+          aria-label="Open Spotify track preview"
+        >
           <div className={styles.heroContent}>
             <span className={styles.heroEyebrow}>Featured on Spotify</span>
-            <div className={styles.heroTitle}>New music / latest release</div>
+            <div className={styles.heroTitle}>Listen to Spiraling Rainbows</div>
             <div className={styles.heroText}>
-              Swap this block for your cover art or a promo image.
+              Tap to open the track on Spotify.
             </div>
           </div>
-        </div>
+          <Image
+            src="/images/rainbowBEACH.jpeg"
+            alt="Spiraling Rainbows Spotify preview artwork"
+            width={600}
+            height={600}
+            className={styles.heroImage}
+          />
+        </Link>
 
         <nav className={styles.buttonContainer} aria-label="Social and external links">
           {links.map((link) => (
