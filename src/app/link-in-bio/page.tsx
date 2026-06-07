@@ -5,27 +5,22 @@ import styles from './page.module.css';
 const links = [
   {
     label: 'Spotify',
-    href: 'https://open.spotify.com/',
+    href: 'https://open.spotify.com/artist/1gbdkHLoka2Y0PaH2d5KPO?si=PQwM850HTMC8Chss-mKttQ',
     variant: 'primary',
   },
   {
     label: 'Bandcamp',
-    href: 'https://bandcamp.com/',
+    href: 'https://matansweeto.bandcamp.com/album/spiraling-rainbows',
     variant: 'secondary',
   },
   {
     label: 'YouTube',
-    href: 'https://youtube.com/',
+    href: 'https://www.youtube.com/@Matansweeto',
     variant: 'secondary',
   },
   {
     label: 'Main Website',
     href: 'https://matansweeto.com',
-    variant: 'secondary',
-  },
-  {
-    label: 'Jungle Immersion Retreat',
-    href: 'https://jungleimmersionretreat.com',
     variant: 'secondary',
   },
 ];
