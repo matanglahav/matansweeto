@@ -54,31 +54,48 @@
 }
 
 .heroBlock {
+  position: relative;
   margin-top: 20px;
-  min-height: 240px;
+  min-height: 180px;
   border-radius: 24px;
   overflow: hidden;
   border: 1px solid rgba(255, 255, 255, 0.7);
-  background:
-    linear-gradient(180deg, rgba(255, 255, 255, 0.12), rgba(255, 255, 255, 0.04)),
-    linear-gradient(135deg, rgba(59, 130, 246, 0.12), rgba(14, 165, 233, 0.08));
+  background: linear-gradient(135deg, rgba(59, 130, 246, 0.12), rgba(14, 165, 233, 0.08));
   box-shadow: 0 14px 30px rgba(19, 52, 79, 0.1);
   display: flex;
-  align-items: end;
+  align-items: stretch;
+  text-decoration: none;
+}
+
+.heroImage {
+  object-fit: cover;
+  object-position: 38% center;
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, rgba(255, 255, 255, 0.86) 0%, rgba(255, 255, 255, 0.6) 42%, rgba(255, 255, 255, 0.12) 100%);
 }
 
 .heroContent {
-  width: 100%;
+  position: relative;
+  z-index: 1;
+  width: min(72%, 320px);
   padding: 18px;
   text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
 }
 
 .heroEyebrow {
   display: inline-flex;
   align-items: center;
+  width: fit-content;
   padding: 7px 12px;
   border-radius: 999px;
-  background: rgba(255, 255, 255, 0.8);
+  background: rgba(255, 255, 255, 0.82);
   color: #14324a;
   font-size: 0.78rem;
   font-weight: 700;
@@ -87,15 +104,15 @@
 
 .heroTitle {
   color: #14324a;
-  font-size: 1.2rem;
+  font-size: 1.15rem;
   font-weight: 800;
   margin-bottom: 6px;
 }
 
 .heroText {
   color: #557089;
-  font-size: 0.95rem;
-  line-height: 1.5;
+  font-size: 0.92rem;
+  line-height: 1.45;
 }
 
 .buttonContainer {
@@ -161,6 +178,15 @@
   }
 
   .heroBlock {
-    min-height: 200px;
+    min-height: 164px;
+  }
+
+  .heroContent {
+    width: min(80%, 270px);
+    padding: 16px;
+  }
+
+  .heroOverlay {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.88) 0%, rgba(255, 255, 255, 0.66) 55%, rgba(255, 255, 255, 0.16) 100%);
   }
 }
