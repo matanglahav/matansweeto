@@ -60,7 +60,7 @@ export default function LinkInBio() {
             </div>
           </div>
           <Image
-            src="/images/rainbowBEACH.jpeg"
+            src="/images/matan.rainbow.cut.png"
             alt="Spiraling Rainbows Spotify preview artwork"
             width={600}
             height={600}
