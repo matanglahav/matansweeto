@@ -50,22 +50,19 @@ export default function LinkInBio() {
           target="_blank"
           rel="noopener noreferrer"
           className={styles.heroBlock}
-          aria-label="Open Spotify track preview"
+          aria-label="Open Rainbows All Around You on Spotify"
         >
-          <div className={styles.heroContent}>
-            <span className={styles.heroEyebrow}>Featured on Spotify</span>
-            <div className={styles.heroTitle}>Listen to Spiraling Rainbows</div>
-            <div className={styles.heroText}>
-              Tap to open the track on Spotify.
-            </div>
-          </div>
           <Image
-            src="/images/matan.rainbow.cut.png"
-            alt="Spiraling Rainbows Spotify preview artwork"
-            width={600}
-            height={600}
+            src="/images/rainbows.all.around.you.JPG"
+            alt="Rainbows All Around You artwork"
+            fill
             className={styles.heroImage}
+            sizes="(max-width: 560px) 100vw, 520px"
           />
+          <div className={styles.heroOverlay} />
+          <div className={styles.heroContent}>
+            <div className={styles.heroTitle}>Rainbows All Around You</div>
+          </div>
         </Link>
 
         <nav className={styles.buttonContainer} aria-label="Social and external links">
