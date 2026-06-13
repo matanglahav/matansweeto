@@ -42,7 +42,7 @@ export default function LinkInBio() {
 
         <h1 className={styles.title}>Matan Sweeto</h1>
         <p className={styles.subtitle}>
-          Affirmation Music, Heart opening Frequencies, Conscious Lyricists, Ceremonial Magick
+          Affirmation Music, Conscious Lyricism, Heart-Opening Frequencies, Ceremonial Magick
         </p>
 
         <Link
