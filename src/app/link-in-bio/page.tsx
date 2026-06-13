@@ -42,7 +42,7 @@ export default function LinkInBio() {
 
         <h1 className={styles.title}>Matan Sweeto</h1>
         <p className={styles.subtitle}>
-          Music, retreats, and everything I’m sharing right now — all in one place.
+          Affirmation Music, Heart opening Frequencies, Conscious Lyricists, Ceremonial Magick
         </p>
 
         <Link
