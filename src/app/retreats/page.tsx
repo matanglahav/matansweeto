@@ -35,31 +35,25 @@ function IconInstagram(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
-function IconMail(props: React.SVGProps<SVGSVGElement>) {
-  return (
-    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
-      <path
-        fill="currentColor"
-        d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z"
-      />
-    </svg>
-  );
-}
-
 export default function RetreatsPage() {
   const [activeImageIndex, setActiveImageIndex] = useState<number | null>(null);
 
   const openLightbox = (index: number) => setActiveImageIndex(index);
   const closeLightbox = () => setActiveImageIndex(null);
+
   const showPrevious = () => {
     if (activeImageIndex === null) return;
     setActiveImageIndex(
-      (activeImageIndex - 1 + portugalCeremonyImages.length) % portugalCeremonyImages.length
+      (activeImageIndex - 1 + portugalCeremonyImages.length) %
+        portugalCeremonyImages.length
     );
   };
+
   const showNext = () => {
     if (activeImageIndex === null) return;
-    setActiveImageIndex((activeImageIndex + 1) % portugalCeremonyImages.length);
+    setActiveImageIndex(
+      (activeImageIndex + 1) % portugalCeremonyImages.length
+    );
   };
 
   return (
@@ -83,7 +77,7 @@ export default function RetreatsPage() {
                 key={src}
                 type="button"
                 onClick={() => openLightbox(index)}
-                className="group relative overflow-hidden rounded-2xl border border-white/70 bg-slate-950 shadow-md hover:shadow-xl transition-all"
+                className="group relative overflow-hidden rounded-2xl border border-white/70 bg-slate-950 shadow-md transition-all hover:shadow-xl"
                 aria-label={`Open Portugal ceremony image ${index + 1}`}
               >
                 <div className="relative aspect-[4/3] w-full">
@@ -107,11 +101,16 @@ export default function RetreatsPage() {
           </h2>
 
           <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+<<<<<<< HEAD
             I&apos;m super stoked to visit, work and study with the Nike Koi tribe!
+=======
+            I&apos;m super stoked to visit, work and study with the Nike Koi
+            tribe!
+>>>>>>> bb622b3 (Update retreats page copy and cleanup)
           </p>
 
           <p className="text-lg md:text-xl text-gray-700 leading-relaxed mt-5">
-            More info at {" "}
+            More info at{" "}
             <Link
               href="/join-the-jungle"
               className="font-semibold text-cyan-700 underline underline-offset-4 hover:text-cyan-900 transition-colors"
@@ -129,7 +128,6 @@ export default function RetreatsPage() {
           </h2>
 
           <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-            Considering working with me?
             <br />
             Please reach out and let&apos;s chat.
           </p>
@@ -140,7 +138,7 @@ export default function RetreatsPage() {
             </h3>
 
             <ul className="list-disc pl-6 space-y-3 text-lg text-gray-700">
-              <li>Yoga and meditation instructor</li>
+              <li>500hr certified Yoga instructor</li>
               <li>Ceremony Facilitator &amp; Space Holder</li>
               <li>Ceremonial music</li>
               <li>Various workshops, unique &amp; fun group activities</li>
@@ -172,16 +170,6 @@ export default function RetreatsPage() {
                 <IconInstagram className="h-5 w-5" />
               </span>
               <span className="font-semibold">@matansweeto</span>
-            </a>
-
-            <a
-              href="mailto:matansweeto@gmail.com"
-              className="group inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/70 border border-white/60 shadow-md hover:shadow-lg hover:bg-white transition-all text-gray-900"
-            >
-              <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-cyan-700 text-white">
-                <IconMail className="h-5 w-5" />
-              </span>
-              <span className="font-semibold">Email</span>
             </a>
           </div>
         </section>
