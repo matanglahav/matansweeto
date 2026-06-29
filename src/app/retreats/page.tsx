@@ -101,7 +101,7 @@ export default function RetreatsPage() {
           </h2>
 
           <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-            I&apos;m super stoked to visit, work and study with the Nike Koi tribe!
+            I&apos;m super stoked to visit, work and study with the Noke Koî tribe!
           </p>
 
           <p className="text-lg md:text-xl text-gray-700 leading-relaxed mt-5">
