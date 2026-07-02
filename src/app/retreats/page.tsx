@@ -14,7 +14,7 @@ function IconWhatsApp(props: React.SVGProps<SVGSVGElement>) {
     <svg viewBox="0 0 32 32" aria-hidden="true" {...props}>
       <path
         fill="currentColor"
-        d="M19.11 17.53c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.34-.81-.72-1.35-1.6-1.51-1.88-.16-.27-.02-.42.12-.56.12-.1.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.48-.84-2.02-.22-.53-.44-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.63 1.11 2.81c.14.18 1.92 2.93 4.65 4.11.65.28 1.16.45 1.56.58.66.21 1.26.18 1.74.11.53-.08 1.6-.65 1.83-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32Z"
+        d="M19.11 17.53c-.27-.14-1.6-.79-1.85-.88-.25-.09-.43-.14-.61.14-.18.27-.7.88-.86 1.06-.16.18-.32.2-.59.07-.27-.14-1.15-.42-2.19-1.34-.81-.72-1.35-1.6-1.51-1.88-.16-.27-.02-.42.12-.56.12-.16.27-.32.41-.48.14-.16.18-.27.27-.45.09-.18.05-.34-.02-.48-.07-.14-.61-1.48-.84-2.02-.22-.53-.44-.46-.61-.47h-.52c-.18 0-.48.07-.73.34-.25.27-.95.93-.95 2.27s.98 2.63 1.11 2.81c.14.18 1.92 2.93 4.65 4.11.65.28 1.16.45 1.56.58.66.21 1.26.18 1.74.11.53-.08 1.6-.65 1.83-1.28.23-.63.23-1.17.16-1.28-.07-.11-.25-.18-.52-.32Z"
       />
       <path
         fill="currentColor"
@@ -35,25 +35,31 @@ function IconInstagram(props: React.SVGProps<SVGSVGElement>) {
   );
 }
 
+function IconMail(props: React.SVGProps<SVGSVGElement>) {
+  return (
+    <svg viewBox="0 0 24 24" aria-hidden="true" {...props}>
+      <path
+        fill="currentColor"
+        d="M20 4H4a2 2 0 0 0-2 2v12a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V6a2 2 0 0 0-2-2Zm0 4-8 5L4 8V6l8 5 8-5v2Z"
+      />
+    </svg>
+  );
+}
+
 export default function RetreatsPage() {
   const [activeImageIndex, setActiveImageIndex] = useState<number | null>(null);
 
   const openLightbox = (index: number) => setActiveImageIndex(index);
   const closeLightbox = () => setActiveImageIndex(null);
-
   const showPrevious = () => {
     if (activeImageIndex === null) return;
     setActiveImageIndex(
-      (activeImageIndex - 1 + portugalCeremonyImages.length) %
-        portugalCeremonyImages.length
+      (activeImageIndex - 1 + portugalCeremonyImages.length) % portugalCeremonyImages.length
     );
   };
-
   const showNext = () => {
     if (activeImageIndex === null) return;
-    setActiveImageIndex(
-      (activeImageIndex + 1) % portugalCeremonyImages.length
-    );
+    setActiveImageIndex((activeImageIndex + 1) % portugalCeremonyImages.length);
   };
 
   return (
@@ -71,21 +77,21 @@ export default function RetreatsPage() {
             Portugal Ceremony Weekends October 2026
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
             {portugalCeremonyImages.map((src, index) => (
               <button
                 key={src}
                 type="button"
                 onClick={() => openLightbox(index)}
-                className="group relative overflow-hidden rounded-2xl border border-white/70 bg-slate-950 shadow-md transition-all hover:shadow-xl"
+                className="group relative overflow-hidden rounded-2xl border border-white/70 bg-white/70 p-3 shadow-md hover:shadow-xl transition-all"
                 aria-label={`Open Portugal ceremony image ${index + 1}`}
               >
-                <div className="relative aspect-[4/3] w-full">
+                <div className="relative aspect-[3/4] w-full rounded-xl bg-slate-950/10">
                   <Image
                     src={src}
                     alt={`Portugal Ceremony Weekend poster ${index + 1}`}
                     fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-[1.02]"
+                    className="object-contain transition-transform duration-300 group-hover:scale-[1.02]"
                     sizes="(max-width: 640px) 100vw, 50vw"
                   />
                 </div>
@@ -101,11 +107,11 @@ export default function RetreatsPage() {
           </h2>
 
           <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
-            I&apos;m super stoked to visit, work and study with the Noke Koî tribe!
+            I&apos;m super stoked to visit, work and study with the Nike Koi tribe!
           </p>
 
           <p className="text-lg md:text-xl text-gray-700 leading-relaxed mt-5">
-            More info at{" "}
+            More info at {" "}
             <Link
               href="/join-the-jungle"
               className="font-semibold text-cyan-700 underline underline-offset-4 hover:text-cyan-900 transition-colors"
@@ -123,6 +129,7 @@ export default function RetreatsPage() {
           </h2>
 
           <p className="text-lg md:text-xl text-gray-700 leading-relaxed">
+            Considering working with me?
             <br />
             Please reach out and let&apos;s chat.
           </p>
@@ -133,7 +140,7 @@ export default function RetreatsPage() {
             </h3>
 
             <ul className="list-disc pl-6 space-y-3 text-lg text-gray-700">
-              <li>500hr certified Yoga instructor</li>
+              <li>Yoga and meditation instructor</li>
               <li>Ceremony Facilitator &amp; Space Holder</li>
               <li>Ceremonial music</li>
               <li>Various workshops, unique &amp; fun group activities</li>
@@ -166,6 +173,16 @@ export default function RetreatsPage() {
               </span>
               <span className="font-semibold">@matansweeto</span>
             </a>
+
+            <a
+              href="mailto:matansweeto@gmail.com"
+              className="group inline-flex items-center gap-3 px-6 py-3 rounded-full bg-white/70 border border-white/60 shadow-md hover:shadow-lg hover:bg-white transition-all text-gray-900"
+            >
+              <span className="inline-flex h-10 w-10 items-center justify-center rounded-full bg-cyan-700 text-white">
+                <IconMail className="h-5 w-5" />
+              </span>
+              <span className="font-semibold">Email</span>
+            </a>
           </div>
         </section>
       </div>
@@ -175,6 +192,7 @@ export default function RetreatsPage() {
           className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/90 px-4 py-6"
           role="dialog"
           aria-modal="true"
+          onClick={closeLightbox}
         >
           <button
             type="button"
@@ -187,14 +205,22 @@ export default function RetreatsPage() {
 
           <button
             type="button"
-            onClick={showPrevious}
+            onClick={(event) => {
+              event.stopPropagation();
+              showPrevious();
+            }}
             className="absolute left-3 md:left-6 rounded-full bg-white/10 px-4 py-3 text-white hover:bg-white/20"
             aria-label="Previous image"
           >
             ←
           </button>
 
-          <div className="relative w-full max-w-5xl">
+          <button
+            type="button"
+            onClick={closeLightbox}
+            className="relative w-full max-w-5xl"
+            aria-label="Close Portugal ceremony image viewer"
+          >
             <div className="relative aspect-[3/4] max-h-[85vh] w-full overflow-hidden rounded-3xl bg-black">
               <Image
                 src={portugalCeremonyImages[activeImageIndex]}
@@ -205,11 +231,14 @@ export default function RetreatsPage() {
                 priority
               />
             </div>
-          </div>
+          </button>
 
           <button
             type="button"
-            onClick={showNext}
+            onClick={(event) => {
+              event.stopPropagation();
+              showNext();
+            }}
             className="absolute right-3 md:right-6 rounded-full bg-white/10 px-4 py-3 text-white hover:bg-white/20"
             aria-label="Next image"
           >
