@@ -32,7 +32,7 @@ export default function AboutPage() {
           </p>
 
           <p>
-            Hosting events, music concerts and medicine ceremonies worldwide.
+            Hosting events, music concerts and ceremonies worldwide.
             Find me in Vancouver Island, Canada, This Summer!
           </p>
 
